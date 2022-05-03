@@ -6,25 +6,27 @@ public class Chapter_03_14 {
         String[] course = {"Java", "C++", "HTML5", "컴퓨터구조", "안드로이드"};
         int[] score = {95, 88, 76, 62, 55};
 
-        String input;
-        int i=0;
-        do{
-            System.out.print("과목 이름");
-            input = scanner.nextLine();
-            System.out.println(input);
+        while(true){
+            String input;
+            int i = 0;
 
-            if(input == "그만"){
+            System.out.print("과목 이름>>>");
+            input = scanner.next();
+
+            if (input.equals("그만"))
                 break;
+
+            for (i = 0; i < course.length; i++) {
+                if (course[i].equals(input)) {
+                    System.out.println(course[i] + "의 점수는 " + score[i]);
+                    break;
+                }
             }
 
-            if(course[i].equals(input)){
-                for(i = 0; i < course.length;i++)
-                        System.out.println(course[i] + "의 점수는 " + score[i]);
-            } else{
+            if(i==course.length){
                 System.out.println("없는 과목입니다.");
             }
-
-        } while(input !="그만"); //그만이면 반복문 멈춤
+        }
         scanner.close();
     }
 }
