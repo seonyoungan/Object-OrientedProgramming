@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class Example_04_01 {
     int radius ; //반지름 필드
     String name;  // 원 이름 필드
